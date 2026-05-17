@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Press Start 2P', monospace;
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Contenedor Principal con Decoración Vintage Pixel */
+.stardew-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #fbc5d8 0%, #d8b4f8 100%); 
+  border: 10px double #fff;
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.5);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Flores flotantes decorativas en el menú */
+.bg-flower {
+  position: absolute;
+  font-size: 20px;
+  opacity: 0.6;
+  animation: floatFlower 6s infinite ease-in-out;
+}
+@keyframes floatFlower {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(45deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Animación del Título */
+@keyframes pulseHeart {
+  0% { transform: scale(1); text-shadow: 4px 4px 0px #d47a93; }
+  50% { transform: scale(1.04); text-shadow: 5px 5px 0px #c2637c; }
+  100% { transform: scale(1); text-shadow: 4px 4px 0px #d47a93; }
+}
+
+.title-pulse {
+  font-size: 30px; 
+  margin-bottom: 5px; 
+  color: #fff; 
+  text-align: center;
+  animation: pulseHeart 1.8s infinite ease-in-out;
+  z-index: 2;
+}
+
+.subtitle {
+  font-size: 10px;
+  color: #6c5b7b;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+/* Botones Stardew */
+.stardew-btn {
+  background-color: #f7a3b9;
+  color: #fff;
+  border: 4px solid #fff;
+  padding: 12px 30px;
+  margin: 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #d47a93;
+  transition: all 0.1s ease;
+  text-shadow: 2px 2px 0px #d47a93;
+  z-index: 2;
+}
+
+.stardew-btn:hover {
+  background-color: #ffb7ca;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #d47a93;
+}
+
+.stardew-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #d47a93;
+}
+
+.stardew-btn:disabled {
+  background-color: #ccc;
+  box-shadow: 0 4px 0 #999;
+  border-color: #eee;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Grid del Selector de Gatos */
+.skin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+  z-index: 2;
+}
+
+.skin-card {
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 4px solid rgba(255,255,255,0.4);
+  border-radius: 16px;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  transition: all 0.2s ease;
+}
+
+.skin-card.selected {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(247, 163, 185, 0.7);
+  transform: scale(1.05);
+}
+
+.skin-name {
+  font-size: 9px;
+  margin-top: 10px;
+  color: #554461;
+  font-weight: bold;
+}
+
+.skin-status {
+  font-size: 7px;
+  margin-top: 5px;
+  color: #ff527b;
+}
+
+/* Mini Render de Gato para la UI del Selector */
+.mini-cat-preview {
+  width: 32px;
+  height: 28px;
+  border-radius: 4px;
+  position: relative;
+}
+.mini-cat-ear {
+  position: absolute;
+  top: -5px;
+  width: 8px;
+  height: 6px;
+}
+
+/* Alertas de Amor */
+.love-notification {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.96);
+  color: #2d7a4d; 
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: 14px;
+  padding: 15px 20px;
+  border: 4px solid #a3e5b8; 
+  border-radius: 16px;
+  width: 85%;
+  max-width: 340px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  animation: fadeInOut 4.2s forwards;
+  z-index: 100;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Contenedor de Cartas */
+.letter-box {
+  background-color: #fff; 
+  color: #4a4a4a; 
+  padding: 30px; 
+  border: 6px solid #f7a3b9; 
+  max-width: 90%;
+  width: 440px; 
+  border-radius: 24px; 
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Decoración Inferior de la Carta */
+.letter-footer-cats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 2px dashed #fbc5d8;
+}
+
+/* Controles Táctiles */
+.mobile-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 12px;
+}
+
+.touch-btn {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 4px solid #fff;
+  color: #d47a93;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -15px); }
+  10% { opacity: 1; transform: translate(-50%, 0); }
+  90% { opacity: 1; transform: translate(-50%, 0); }
+  100% { transform: translate(-50%, -15px); opacity: 0; }
+} 
